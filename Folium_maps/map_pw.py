@@ -33,8 +33,17 @@ Chembur_West = pd.read_csv(ChemburW)
 Mahul= r'C:\Users\Mohammed Sherali\Downloads\CheetaCampApi'
 Mahul_E = pd.read_csv(Mahul)
 
-AnushaktiNagar=Anushakti_Nagar.iloc[:,-1:]
-print(AnushaktiNagar)
+CheddaApi = Chedda_Nagar['AQI'].iloc[-1]
+print(CheddaApi)
+TilakApi = Tilak_Nagar['AQI'].iloc[-1]
+print(TilakApi)
+SindhiApi = Sindhi_Society['AQI'].iloc[-1]
+print(SindhiApi)
+ChemburWApi = Chembur_West['AQI'].iloc[-1]
+print(ChemburWApi)
+MahulApi = Mahul_E['AQI'].iloc[-1]
+print(MahulApi)
+
 # Create markers
 # folium.Marker([42.363600, -71.099500],
 #               popup='<strong>Location One</strong>',
