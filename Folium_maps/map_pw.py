@@ -18,6 +18,23 @@ m = folium.Map(location=[19.0611, 72.8993], zoom_start=13)
 # Geojson Data
 overlay = os.path.join('', 'M-ward-parts(W).json')
 
+Chedda= r'C:\Users\Mohammed Sherali\Downloads\AnushaktiApi'
+Chedda_Nagar= pd.read_csv(Chedda)
+
+Tilak = r'C:\Users\Mohammed Sherali\Downloads\TrombayApi'
+Tilak_Nagar = pd.read_csv(Tilak)
+
+Sindhi= r'C:\Users\Mohammed Sherali\Downloads\CheetaCampApi'
+Sindhi_Society = pd.read_csv(Sindhi)
+
+ChemburW= r'C:\Users\Mohammed Sherali\Downloads\CheetaCampApi'
+Chembur_West = pd.read_csv(ChemburW)
+
+Mahul= r'C:\Users\Mohammed Sherali\Downloads\CheetaCampApi'
+Mahul_E = pd.read_csv(Mahul)
+
+AnushaktiNagar=Anushakti_Nagar.iloc[:,-1:]
+print(AnushaktiNagar)
 # Create markers
 # folium.Marker([42.363600, -71.099500],
 #               popup='<strong>Location One</strong>',
