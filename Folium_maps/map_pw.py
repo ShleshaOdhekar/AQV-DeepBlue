@@ -2,7 +2,7 @@ import folium
 import os
 import json
 from folium.features import DivIcon
-
+import pandas as pd
 # Create map object
 m = folium.Map(location=[19.0611, 72.8993], zoom_start=13)
 
@@ -18,19 +18,19 @@ m = folium.Map(location=[19.0611, 72.8993], zoom_start=13)
 # Geojson Data
 overlay = os.path.join('', 'M-ward-parts(W).json')
 
-Chedda= r'C:\Users\Mohammed Sherali\Downloads\AnushaktiApi'
-Chedda_Nagar= pd.read_csv(Chedda)
+Chedda = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\CheddaNagar.csv'
+Chedda_Nagar = pd.read_csv(Chedda)
 
-Tilak = r'C:\Users\Mohammed Sherali\Downloads\TrombayApi'
+Tilak = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\TilakNagar.csv'
 Tilak_Nagar = pd.read_csv(Tilak)
 
-Sindhi= r'C:\Users\Mohammed Sherali\Downloads\CheetaCampApi'
+Sindhi = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\SIndhiSociety.csv'
 Sindhi_Society = pd.read_csv(Sindhi)
 
-ChemburW= r'C:\Users\Mohammed Sherali\Downloads\CheetaCampApi'
+ChemburW = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\Chembur_west.csv'
 Chembur_West = pd.read_csv(ChemburW)
 
-Mahul= r'C:\Users\Mohammed Sherali\Downloads\CheetaCampApi'
+Mahul = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\MahulApi.csv'
 Mahul_E = pd.read_csv(Mahul)
 
 CheddaApi = Chedda_Nagar['AQI'].iloc[-1]

@@ -18,28 +18,28 @@ m = folium.Map(location=[19.0611, 72.8993], zoom_start=13)
 # Geojson Data
 overlay = os.path.join('', 'M-ward-parts(E).json')
 
-Anushakti = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\AnushaktiApi.csv'
+Anushakti = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AnushaktiApi.csv'
 Anushakti_Nagar = pd.read_csv(Anushakti)
 
-Trombay = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\TrombayApi.csv'
+Trombay = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\TrombayApi.csv'
 Trombay_Api = pd.read_csv(Trombay)
 
-Cheeta = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\CheetaCampApi.csv'
+Cheeta = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\CheetaCampApi.csv'
 CheetaCamp = pd.read_csv(Cheeta)
 
-ShivajiNagar = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\ShivajiNagar.csv'
+ShivajiNagar = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\ShivajiNagar.csv'
 ShivajiNagar_Api = pd.read_csv(ShivajiNagar)
 
-Mankhurd = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\MankhurdWest.csv'
+Mankhurd = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\MankhurdWest.csv'
 Mankhurd_Api = pd.read_csv(Mankhurd)
 
-Govandi = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\GovandiE.csv'
+Govandi = r'C: \Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\GovandiE.csv
 Govandi_Api = pd.read_csv(Govandi)
 
-ChemburEast = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\ChemburE.csv'
+ChemburEast = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\ChemburE.csv'
 ChemburEast_Api = pd.read_csv(ChemburEast)
 
-Deonar = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\Deonar.csv'
+Deonar = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\Deonar.csv'
 Deonar_Api = pd.read_csv(Deonar)
 
 AnushaktiApi = Anushakti_Nagar['AQI'].iloc[-1]
