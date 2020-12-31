@@ -4,7 +4,8 @@
       {
         "type": "Feature",
         "properties": {
-          "name": "Mankhurd"
+          "name": "Mankhurd",
+          "AQI":100
         },
         "geometry": {
           "type": "Polygon",
@@ -201,7 +202,8 @@
       {
         "type": "Feature",
         "properties": {
-          "name": "Deonar"
+          "name": "Deonar",
+          "AQI":100
         },
         "geometry": {
           "type": "Polygon",
@@ -246,7 +248,8 @@
       {
         "type": "Feature",
         "properties": {
-          "name": "Cheetah Camp"
+          "name": "Cheetah Camp",
+          "AQI":100
         },
         "geometry": {
           "type": "Polygon",
@@ -311,7 +314,8 @@
       {
         "type": "Feature",
         "properties": {
-          "name": "Ansuhakti Nagar"
+          "name": "Ansuhakti Nagar",
+          "AQI":100
         },
         "geometry": {
           "type": "Polygon",
@@ -588,7 +592,8 @@
       {
         "type": "Feature",
         "properties": {
-          "name": "Shivaji Nagar"
+          "name": "Shivaji Nagar",
+          "AQI":100
         },
         "geometry": {
           "type": "Polygon",
@@ -664,7 +669,11 @@
       },
       {
         "type": "Feature",
-        "properties": {"name":"Govandi"},
+        "properties": {
+          "name":"Govandi",
+          "AQI":100
+        
+        },
         "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -784,7 +793,10 @@
         },
         {
           "type": "Feature",
-          "properties": {"name":"Chembur-east"},
+          "properties": {
+            "name":"Chembur-east",
+            "AQI":100
+          },
           "geometry": {
             "type": "Polygon",
             "coordinates": [
@@ -951,7 +963,10 @@
         },
         {
           "type": "Feature",
-          "properties": {"name":"Trombay"},
+          "properties": {
+            "name":"Trombay",
+            "AQI":100
+          },
           "geometry": {
             "type": "Polygon",
             "coordinates": [

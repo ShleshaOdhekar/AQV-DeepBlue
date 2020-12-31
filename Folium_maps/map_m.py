@@ -18,6 +18,12 @@ m = folium.Map(location=[19.0611, 72.8993], zoom_start=13)
 # Geojson Data
 overlay = os.path.join('', 'M-ward.json')
 
+
+
+
+
+
+
 # Create markers
 # folium.Marker([42.363600, -71.099500],
 #               popup='<strong>Location One</strong>',
@@ -65,3 +71,4 @@ folium.GeoJson(overlay, name='M-ward').add_to(m)
 
 # Generate map
 m.save('map_m.html')
+
