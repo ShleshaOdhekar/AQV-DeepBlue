@@ -2,7 +2,7 @@ import folium
 import os
 import json
 from folium.features import DivIcon
-
+import pandas as pd
 # Create map object
 m = folium.Map(location=[19.0611, 72.8993], zoom_start=13)
 
@@ -18,16 +18,47 @@ m = folium.Map(location=[19.0611, 72.8993], zoom_start=13)
 # Geojson Data
 overlay = os.path.join('', 'M-ward-parts(E).json')
 
-Anushakti = r'C:\Users\Mohammed Sherali\Downloads\AnushaktiApi'
+Anushakti = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\AnushaktiApi.csv'
 Anushakti_Nagar = pd.read_csv(Anushakti)
 
-Trombay = r'C:\Users\Mohammed Sherali\Downloads\TrombayApi'
+Trombay = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\TrombayApi.csv'
 Trombay_Api = pd.read_csv(Trombay)
 
-Cheeta = r'C:\Users\Mohammed Sherali\Downloads\CheetaCampApi'
+Cheeta = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\CheetaCampApi.csv'
 CheetaCamp = pd.read_csv(Cheeta)
-AnushaktiNagar=Anushakti_Nagar.iloc[:,-1:]
-print(AnushaktiNagar)
+
+ShivajiNagar = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\ShivajiNagar.csv'
+ShivajiNagar_Api = pd.read_csv(ShivajiNagar)
+
+Mankhurd = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\MankhurdWest.csv'
+Mankhurd_Api = pd.read_csv(Mankhurd)
+
+Govandi = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\GovandiE.csv'
+Govandi_Api = pd.read_csv(Govandi)
+
+ChemburEast = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\ChemburE.csv'
+ChemburEast_Api = pd.read_csv(ChemburEast)
+
+Deonar = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AQI DATA NEW\Deonar.csv'
+Deonar_Api = pd.read_csv(Deonar)
+
+AnushaktiApi = Anushakti_Nagar['AQI'].iloc[-1]
+print(AnushaktiApi)
+TrombayApi = Trombay_Api['AQI'].iloc[-1]
+print(TrombayApi)
+CheetaApi = CheetaCamp['AQI'].iloc[-1]
+print(CheetaApi)
+ShivajiNagarApi = ShivajiNagar_Api['AQI'].iloc[-1]
+print(ShivajiNagarApi)
+GovandiApi = Govandi_Api['AQI'].iloc[-1]
+print(GovandiApi)
+ChemburEastApi = ChemburEast_Api['AQI'].iloc[-1]
+print(ChemburEastApi)
+MankhurdApi = Mankhurd_Api['AQI'].iloc[-1]
+print(MankhurdApi)
+DeonarApi = Deonar_Api['AQI'].iloc[-1]
+print(DeonarApi)
+
 # Create markers
 # folium.Marker([42.363600, -71.099500],
 #               popup='<strong>Location One</strong>',
