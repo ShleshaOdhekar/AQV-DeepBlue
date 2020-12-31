@@ -4,7 +4,8 @@
       {
         "type": "Feature",
         "properties": {
-          "name": "Chedda nagar"
+          "name": "Chedda nagar",
+          "AQI":100
         },
         "geometry": {
           "type": "Polygon",
@@ -93,7 +94,8 @@
       {
         "type": "Feature",
         "properties": {
-          "name": "Tilak Nagar"
+          "name": "Tilak Nagar",
+          "AQI":100
         },
         "geometry": {
           "type": "Polygon",
@@ -206,7 +208,8 @@
       {
         "type": "Feature",
         "properties": {
-          "name": "Sindhi Society"
+          "name": "Sindhi Society",
+          "AQI":100
         },
         "geometry": {
           "type": "Polygon",
@@ -274,7 +277,10 @@
       },
       {
         "type": "Feature",
-        "properties": {"name":"Chembur-west"},
+        "properties": {
+          "name":"Chembur-west",
+          "AQI":100
+        },
         "geometry": {
           "type": "Polygon",
           "coordinates": [
@@ -390,7 +396,10 @@
       },
       {
         "type": "Feature",
-        "properties": {"name":"Mahul"},
+        "properties": {
+          "name":"Mahul",
+          "AQI":100
+        },
         "geometry": {
           "type": "Polygon",
           "coordinates": [
