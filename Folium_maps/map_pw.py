@@ -3,6 +3,8 @@ import os
 import json
 from folium.features import DivIcon
 import pandas as pd
+import branca.colormap as cm
+
 # Create map object
 m = folium.Map(location=[19.0611, 72.8993], zoom_start=13)
 
@@ -33,17 +35,20 @@ Chembur_West = pd.read_csv(ChemburW)
 Mahul = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\MahulApi.csv'
 Mahul_E = pd.read_csv(Mahul)
 
-CheddaApi = Chedda_Nagar['AQI'].iloc[-1]
-print(CheddaApi)
-TilakApi = Tilak_Nagar['AQI'].iloc[-1]
-print(TilakApi)
-SindhiApi = Sindhi_Society['AQI'].iloc[-1]
-print(SindhiApi)
-ChemburWApi = Chembur_West['AQI'].iloc[-1]
-print(ChemburWApi)
-MahulApi = Mahul_E['AQI'].iloc[-1]
-print(MahulApi)
+CheddaApi = Chedda_Nagar.tail(1)
+CheddaApi['name'] = 'Chedda nagar'
+TilakApi = Tilak_Nagar.tail(1)
 
+TilakApi['name'] = 'Tilak Nagar'
+SindhiApi = Sindhi_Society.tail(1)
+SindhiApi['name'] = 'Sindhi Society'
+ChemburWApi = Chembur_West.tail(1)
+ChemburWApi['name'] = 'Chembur-west'
+MahulApi = Mahul_E.tail(1)
+MahulApi['name'] = 'Mahul'
+
+df_row = pd.concat([CheddaApi, TilakApi, SindhiApi, ChemburWApi, MahulApi])
+print(df_row)
 # Create markers
 # folium.Marker([42.363600, -71.099500],
 #               popup='<strong>Location One</strong>',
@@ -80,14 +85,33 @@ print(MahulApi)
 # Geojson overlay
 folium.GeoJson(overlay, name='M-ward-parts(W)').add_to(m)
 
-folium.map.Marker(
-    [19.044310172961623, 72.88300037384032],
-    icon=DivIcon(
-        icon_size=(180, 30),
-        icon_anchor=(0, 0),
-        html='<div style="font-size: 24pt">M-ward(W)</div>',
-    )
+# colormap = branca.colormap.linear.YlOrRd_09.scale(0, 500)
+# colormap = colormap.to_step(index=[0, 50, 100, 150, 200, 300, 400, 500])
+# colormap.caption = 'Air Quality Index of M-ward West'
+# colormap.add_to(m)
+
+folium.Choropleth(
+    geo_data=overlay,
+    data=df_row,
+    columns=['name', 'AQI'],
+    name='choropleth',
+    key_on='feature.properties.name',
+    fill_color='YlOrRd',
+    threshold_scale=[0, 50, 100, 150, 200, 250, 300, 400, 500],
+    fill_opacity=0.7,
+    legend_name='Air Quality Index of M-ward West'
+
+
 ).add_to(m)
+
+# folium.map.Marker(
+#     [19.044310172961623, 72.88300037384032],
+#     icon=DivIcon(
+#         icon_size=(180, 30),
+#         icon_anchor=(0, 0),
+#         html='<div style="font-size: 24pt">M-ward(W)</div>',
+#     )
+# ).add_to(m)
 
 # Generate map
 m.save('map_pw.html')
