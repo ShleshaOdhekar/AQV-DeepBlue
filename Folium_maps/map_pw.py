@@ -4,7 +4,6 @@ import json
 from folium.features import DivIcon
 import pandas as pd
 import branca.colormap as cm
-
 # Create map object
 m = folium.Map(location=[19.0611, 72.8993], zoom_start=13)
 
@@ -90,7 +89,7 @@ folium.GeoJson(overlay, name='M-ward-parts(W)').add_to(m)
 # colormap.caption = 'Air Quality Index of M-ward West'
 # colormap.add_to(m)
 
-folium.Choropleth(
+choropleth = folium.Choropleth(
     geo_data=overlay,
     data=df_row,
     columns=['name', 'AQI'],
@@ -99,11 +98,15 @@ folium.Choropleth(
     fill_color='YlOrRd',
     threshold_scale=[0, 50, 100, 150, 200, 250, 300, 400, 500],
     fill_opacity=0.7,
-    legend_name='Air Quality Index of M-ward West'
+    legend_name='Air Quality Index of M-ward West',
+    highlight=True
 
 
 ).add_to(m)
-
+folium.LayerControl().add_to(m)
+choropleth.geojson.add_child(
+    folium.features.GeoJsonTooltip(['name', 'AQI'], labels=False)
+)
 # folium.map.Marker(
 #     [19.044310172961623, 72.88300037384032],
 #     icon=DivIcon(

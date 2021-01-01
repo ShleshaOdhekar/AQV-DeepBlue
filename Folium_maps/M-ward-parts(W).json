@@ -5,7 +5,7 @@
         "type": "Feature",
         "properties": {
           "name": "Chedda nagar",
-          "AQI":100
+          "AQI":200
         },
         "geometry": {
           "type": "Polygon",
