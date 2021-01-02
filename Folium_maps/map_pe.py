@@ -33,7 +33,7 @@ ShivajiNagar_Api = pd.read_csv(ShivajiNagar)
 Mankhurd = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\MankhurdWest.csv'
 Mankhurd_Api = pd.read_csv(Mankhurd)
 
-Govandi = r'C: \Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\GovandiE.csv
+Govandi = r'C: \Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\GovandiE.csv'
 Govandi_Api = pd.read_csv(Govandi)
 
 ChemburEast = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\ChemburE.csv'
