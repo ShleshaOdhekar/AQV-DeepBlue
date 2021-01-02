@@ -4,11 +4,11 @@ from matplotlib import pyplot as plt
 
 # import data csv here
 Trombay = pd.read_csv(
-    r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\TrombayApi.csv')
+    r'AQI DATA NEW\TrombayApi.csv')
 Anushakti = pd.read_csv(
-    r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\AnushaktiApi.csv')
+    r'AQI DATA NEW\AnushaktiApi.csv')
 CheetaCamp = pd.read_csv(
-    r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\CheetaCampApi.csv')
+    r'AQI DATA NEW\CheetaCampApi.csv')
 
 # Aqi column selected from all csv and date selected from any one of them
 Api_date = Trombay['Date']
