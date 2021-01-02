@@ -8,28 +8,28 @@ pd.options.mode.chained_assignment = None
 m = folium.Map(location=[19.0611, 72.8993], zoom_start=13)
 
 
-# Geojson Data 
+# Geojson Data
 overlay = os.path.join('', 'M-ward-parts(W).json')
 overlay3 = os.path.join('', 'M-ward-parts(E).json')
 
 overlay2 = os.path.join('', 'partsoverlap.json')
 
-#csv for m ward west
-Chedda_Nagar = pd.read_csv("CheddaNagar.csv")
+# csv for m ward west
+Chedda_Nagar = pd.read_csv("AQI DATA NEW\CheddaNagar.csv")
 
 
-Tilak_Nagar = pd.read_csv("TilakNagar.csv")
+Tilak_Nagar = pd.read_csv("AQI DATA NEW\TilakNagar.csv")
 
 
-Sindhi_Society = pd.read_csv("SIndhiSociety.csv")
+Sindhi_Society = pd.read_csv("AQI DATA NEW\SIndhiSociety.csv")
 
 
-Chembur_West =  pd.read_csv("Chembur_west.csv")
+Chembur_West = pd.read_csv("AQI DATA NEW\Chembur_west.csv")
 
-Deonar =  pd.read_csv("Deonar.csv")
+Deonar = pd.read_csv("AQI DATA NEW\Deonar.csv")
 
 
-Mahul_E = pd.read_csv("MahulApi.csv")
+Mahul_E = pd.read_csv("AQI DATA NEW\MahulApi.csv")
 
 
 CheddaApi = Chedda_Nagar.tail(1)
@@ -48,26 +48,24 @@ MahulApi = Mahul_E.tail(1)
 MahulApi['name'] = 'Mahul'
 
 
+# m ward east
+Cheeta_camp = pd.read_csv("AQI DATA NEW\CheetaCampApi.csv")
 
 
-################# m ward east
-Cheeta_camp = pd.read_csv("CheetaCampApi.csv")
+chembur_east = pd.read_csv("AQI DATA NEW\ChemburE.csv")
 
 
-chembur_east = pd.read_csv("ChemburE.csv")
+govandi_east = pd.read_csv("AQI DATA NEW\GovandiE.csv")
 
 
-govandi_east = pd.read_csv("GovandiE.csv")
+shivaji_nagar = pd.read_csv("AQI DATA NEW\ShivajiNagar.csv")
 
 
-shivaji_nagar =  pd.read_csv("ShivajiNagar.csv")
+trombay = pd.read_csv("AQI DATA NEW\TrombayApi.csv")
 
+Anushakti = pd.read_csv("AQI DATA NEW\AnushaktiApi.csv")
 
-trombay = pd.read_csv("TrombayApi.csv")
-
-Anushakti = pd.read_csv("AnushaktiApi.csv")
-
-mankhud_west = pd.read_csv("MankhurdWest.csv")
+mankhud_west = pd.read_csv("AQI DATA NEW\MankhurdWest.csv")
 
 Cheeta_campApi = Cheeta_camp.tail(1)
 Cheeta_campApi['name'] = 'Cheetah Camp'
@@ -92,13 +90,11 @@ mankhud_westApi['name'] = 'Mankhurd'
 
 #################
 
-df_row = pd.concat([CheddaApi,ChemburWApi,MahulApi]) 
-df_row2= pd.concat([SindhiApi, TilakApi,Cheeta_campApi,DeonarApi])
+df_row = pd.concat([CheddaApi, ChemburWApi, MahulApi])
+df_row2 = pd.concat([SindhiApi, TilakApi, Cheeta_campApi, DeonarApi])
 
-df_row3=pd.concat([chembur_eastApi,govandi_eastApi,shivaji_nagarApi,trombayApi,AnushaktiApi,mankhud_westApi])
-
-
-
+df_row3 = pd.concat([chembur_eastApi, govandi_eastApi,
+                     shivaji_nagarApi, trombayApi, AnushaktiApi, mankhud_westApi])
 
 
 #############
@@ -119,7 +115,7 @@ choropleth = folium.Choropleth(
     name='choropleth',
     key_on='feature.properties.name',
     fill_color='YlOrRd',
-    threshold_scale=[0, 100, 150, 200, 280, 300, 310, 340 , 400, 500],
+    threshold_scale=[0, 100, 150, 200, 280, 300, 310, 340, 400, 500],
     fill_opacity=0.7,
     legend_name='Air Quality Index of M-ward West',
     highlight=True
@@ -134,9 +130,9 @@ choropleth2 = folium.Choropleth(
     name='choropleth',
     key_on='feature.properties.name',
     fill_color='YlOrRd',
-    threshold_scale=[0, 100, 150, 200, 280, 300, 310, 340 , 400, 500],
+    threshold_scale=[0, 100, 150, 200, 280, 300, 310, 340, 400, 500],
     fill_opacity=0.7,
- 
+
     highlight=True
 
 
@@ -153,9 +149,9 @@ choropleth3 = folium.Choropleth(
     name='choropleth',
     key_on='feature.properties.name',
     fill_color='YlOrRd',
-    threshold_scale=[0, 100, 150, 200, 280, 300, 310, 340 , 400, 500],
+    threshold_scale=[0, 100, 150, 200, 280, 300, 310, 340, 400, 500],
     fill_opacity=0.7,
- 
+
     highlight=True
 
 
@@ -165,8 +161,7 @@ for key in choropleth3._children:
         del(choropleth3._children[key])
 choropleth3.add_to(m)
 
-        
-        
+
 folium.LayerControl().add_to(m)
 choropleth.geojson.add_child(
     folium.features.GeoJsonTooltip(['name', 'AQI'], labels=True)
@@ -188,4 +183,4 @@ choropleth3.geojson.add_child(
 # ).add_to(m)
 
 # Generate map
-m.save('map.html')
+m.save('map_all.html')

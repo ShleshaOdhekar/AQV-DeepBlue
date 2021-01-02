@@ -19,19 +19,19 @@ m = folium.Map(location=[19.0611, 72.8993], zoom_start=13)
 # Geojson Data
 overlay = os.path.join('', 'M-ward-parts(W).json')
 
-Chedda = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\CheddaNagar.csv'
+Chedda = r'AQI DATA NEW\CheddaNagar.csv'
 Chedda_Nagar = pd.read_csv(Chedda)
 
-Tilak = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\TilakNagar.csv'
+Tilak = r'AQI DATA NEW\TilakNagar.csv'
 Tilak_Nagar = pd.read_csv(Tilak)
 
-Sindhi = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\SIndhiSociety.csv'
+Sindhi = r'AQI DATA NEW\SIndhiSociety.csv'
 Sindhi_Society = pd.read_csv(Sindhi)
 
-ChemburW = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\Chembur_west.csv'
+ChemburW = r'AQI DATA NEW\Chembur_west.csv'
 Chembur_West = pd.read_csv(ChemburW)
 
-Mahul = r'C:\Users\Nagesh\Desktop\nn_python\AQV-DeepBlue\Folium_maps\AQI DATA NEW\MahulApi.csv'
+Mahul = r'AQI DATA NEW\MahulApi.csv'
 Mahul_E = pd.read_csv(Mahul)
 
 CheddaApi = Chedda_Nagar.tail(1)
@@ -105,7 +105,7 @@ choropleth = folium.Choropleth(
 ).add_to(m)
 folium.LayerControl().add_to(m)
 choropleth.geojson.add_child(
-    folium.features.GeoJsonTooltip(['name', 'AQI'], labels=False)
+    folium.features.GeoJsonTooltip(['name', 'AQI'], labels=True)
 )
 # folium.map.Marker(
 #     [19.044310172961623, 72.88300037384032],
